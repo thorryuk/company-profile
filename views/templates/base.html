@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Meta Head -->
+    {% include 'admin/layout/head.html' %}
+    <!-- End Of Meta Head -->
+    <!-- Custom Head -->
+    {% block custom_head %}{% endblock %}
+    <!-- End ofCustom Head -->
+</head>
+
+<body>
+    <script src="{{ url_for('static', filename='admin/dist/js/demo-theme.min.js') }}"></script>
+    <div class="page">
+        <!-- Sidebar -->
+        {% include 'admin/layout/sidebar.html' %}
+        <!-- End Of Sidebar -->
+        <div class="page-wrapper">
+            <!-- Page header -->
+            <div class="page-header d-print-none">
+                <div class="container-xl">
+                    <div class="row g-2 align-items-center">
+                        <div class="col">
+                            <!-- Page pre-title -->
+                            <div class="page-pretitle">
+                              Index
+                            </div>
+                            <h2 class="page-title">
+                              Sub Index
+                            </h2>
+                        </div>
+                        <!-- Page title actions -->
+                         {% block actions %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+            <!-- End Of Page header -->
+            <!-- Page body -->
+            {% block content %}{% endblock %}
+            <!-- End Of Page body -->
+            <!-- Page Footer -->
+            {% include 'admin/layout/footer.html' %}
+            <!-- End Of Page Footer -->
+        </div>
+    </div>
+    <!-- Modal -->
+    {% block modal %}
+    {% endblock %}
+    <!-- End of Modal -->
+    <!-- Script -->
+    {% include 'admin/layout/script.html' %}
+    {% block custom_script %}{% endblock %}
+    <!-- End Of Script -->
+</body>
+
+</html>
